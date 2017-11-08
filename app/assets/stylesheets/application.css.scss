@@ -14,3 +14,31 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+.index-well {
+  display: inline-block;
+}
+
+.title, .description, 
+.index-date, .links,
+.new-btn {
+  text-align: center;
+}
+
+.new-btn {
+  margin: 15px;
+}
+
+.title, .description, 
+.index-date, .links {
+  margin: 5px;
+}
+

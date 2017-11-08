@@ -1,22 +1,34 @@
-<h1>My Albums</h1>
+<h1 class="center">My Albums</h1>
+<div class="new-btn">
+  <%= link_to 'New', new_album_path, class: "btn btn-success" %>
+</div>
 <div class="row">
   <ul>
     <% @albums.each do |album| %>
-    <div class="col-md-3">
-      <div class="well">
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <div class="well index-well">
         <li>
-          <%= album.title %>
-          <%= album.description %>
-          <%= image_tag album.photo, height: '140px', width: '140px' %>  
-          <%= album.date %>
-          <%= link_to "Show", album_path(album) %>
-          <%= link_to "Edit", edit_album_path(album) %>
-          <%= link_to "Delete", album_path(album), method: :delete,
-                      data: { confirm: "Are you sure?"} %>  
+          <div class="title">
+            <%= album.title.capitalize %>
+          </div>
+          <div class="photo">
+            <%= image_tag album.photo, height: '140px', width: '140px' %> 
+          </div>
+          <div class="description">
+            <%= album.description.capitalize %>
+          </div>
+          <div class="index-date"> 
+            <%= album.date %>
+          </div>
+          <div class="links">
+            <%= link_to "Show", album_path(album) %> |
+            <%= link_to "Edit", edit_album_path(album) %> |
+            <%= link_to "Delete", album_path(album), method: :delete,
+                        data: { confirm: "Are you sure?"} %>  
+          </div>
         </li>
       </div>
     </div>
     <% end %>
   </ul>
 </div>
-<%= link_to 'New', new_album_path %>

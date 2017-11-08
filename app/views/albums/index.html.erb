@@ -1,0 +1,22 @@
+<h1>My Albums</h1>
+<div class="row">
+  <ul>
+    <% @albums.each do |album| %>
+    <div class="col-md-3">
+      <div class="well">
+        <li>
+          <%= album.title %>
+          <%= album.description %>
+          <%= image_tag album.photo, height: '140px', width: '140px' %>  
+          <%= album.date %>
+          <%= link_to "Show", album_path(album) %>
+          <%= link_to "Edit", edit_album_path(album) %>
+          <%= link_to "Delete", album_path(album), method: :delete,
+                      data: { confirm: "Are you sure?"} %>  
+        </li>
+      </div>
+    </div>
+    <% end %>
+  </ul>
+</div>
+<%= link_to 'New', new_album_path %>
